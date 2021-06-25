@@ -1,0 +1,11 @@
+{
+  "name": "algo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "anagram.js",
+  "scripts": {
+    "start": "node anagram.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
