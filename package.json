@@ -4,7 +4,7 @@
   "description": "",
   "main": "anagram.js",
   "scripts": {
-    "start": "node anagram.js"
+    "start": "node .\\DP\\knapsack_topdown.js"
   },
   "author": "",
   "license": "ISC"
