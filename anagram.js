@@ -1,3 +1,8 @@
+// 3. Group the anagrams together.
+// 	Input: strs = ["eat","tea","tan","ate","nat","bat"]
+// 	Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+// 	time complexity and space complexity to be minimum.
+
 let words = ["eat", "tea", "tan", "ate", "nat", "bat"]
 
 
