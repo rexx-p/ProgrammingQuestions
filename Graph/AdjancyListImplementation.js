@@ -28,9 +28,12 @@ class Graph {
 }
 
 
-let graph = new Graph();
-graph.addEdge(0, 1);
-graph.addEdge(0, 2);
-graph.addEdge(2, 3);
-graph.addEdge(1, 2);
-graph.printAdjancyList();
+// let graph = new Graph();
+// graph.addEdge(0, 1);
+// graph.addEdge(0, 2);
+// graph.addEdge(2, 3);
+// graph.addEdge(1, 2);
+// graph.printAdjancyList();
+
+
+module.exports = Graph;
