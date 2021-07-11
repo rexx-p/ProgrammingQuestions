@@ -24,16 +24,20 @@ let isSubsetWithGivenSumPossible = function (arr, sum) {
 
             if (possibleWithPreviousElements) {
                 dp[currentIndex][currentSum] = possibleWithPreviousElements;
-                continue;
-            }
-
-
-            if (arr[currentIndex] > sum) {
-                dp[currentIndex][currentSum] = possibleWithPreviousElements;
+                //console.log('first')
             } else {
-                dp[currentIndex][currentSum] = dp[currentIndex - 1][sum - arr[currentIndex]];
+
+
+                if (arr[currentIndex] > currentSum) {
+                    dp[currentIndex][currentSum] = possibleWithPreviousElements;
+                    //console.log('second')
+                } else {
+                    dp[currentIndex][currentSum] = dp[currentIndex - 1][currentSum - arr[currentIndex]];
+                    //console.log('third')
+
+                }
             }
-             printMatrix(dp);
+            //printMatrix(dp);
 
         }
     }
@@ -44,6 +48,6 @@ let isSubsetWithGivenSumPossible = function (arr, sum) {
 
 
 console.log(isSubsetWithGivenSumPossible([1, 2, 3, 7], 6))
-// console.log(isSubsetWithGivenSumPossible([1, 2, 7, 1, 5], 10))
-// console.log(isSubsetWithGivenSumPossible([1, 3, 4, 8], 6))
+console.log(isSubsetWithGivenSumPossible([1, 2, 7, 1, 5], 10))
+console.log(isSubsetWithGivenSumPossible([1, 3, 4, 8], 6))
 
