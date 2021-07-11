@@ -1,6 +1,6 @@
 const { printMatrix } = require('../util/util');
 
-let minimumSubsetSum = function (arr) {
+let minimumSubsetDiff = function (arr) {
     let totalSum = arr.reduce((s, el) => s + el, 0);
 
 
@@ -40,19 +40,19 @@ let minimumSubsetSum = function (arr) {
 
             }
 
-            printMatrix(dp);
+            //printMatrix(dp);
 
         }
     }
     let maxSumBelowHalfSum = dp[n - 1][sum];
     let remainingSubSetSum = totalSum - maxSumBelowHalfSum;
 
-    return maxSumBelowHalfSum - remainingSubSetSum;
+    return Math.abs(maxSumBelowHalfSum - remainingSubSetSum);
 };
 
 
 
-// console.log(minimumSubsetSum([1, 2, 3, 6], 9))
-// console.log(minimumSubsetSum([1, 2, 7, 2, 5], 10))
-console.log(minimumSubsetSum([1, 3, 5, 8]))
+console.log(minimumSubsetDiff([1, 2, 3, 9]))
+// console.log(minimumSubsetDiff([1, 2, 7, 1, 5]))
+ console.log(minimumSubsetDiff([1, 3, 100, 4]))
 

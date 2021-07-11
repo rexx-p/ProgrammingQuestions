@@ -1,6 +1,6 @@
 const { printMatrix } = require('../util/util');
 
-let countOfSubsetsWithGivenSum = function (arr, sum) {
+let countOfSubsetWithGivenSum = function (arr, sum) {
     let n = arr.length;
 
     const dp = Array(n)
@@ -38,9 +38,23 @@ let countOfSubsetsWithGivenSum = function (arr, sum) {
     return dp[n - 1][sum];
 };
 
+const countOfSubsetWithGivenDiff = function (arr, diff) {
+    let totalSum = arr.reduce((s, el) => s + el, 0);
 
 
-console.log(countOfSubsetsWithGivenSum([1, 2, 3, 6], 9))
-console.log(countOfSubsetsWithGivenSum([1, 2, 7, 2, 5], 10))
-console.log(countOfSubsetsWithGivenSum([1, 3, 4, 8], 6))
+    // we are trying to find a subset of given numbers that has a total sum of ‘sum/2’.
+    let biggerSubsetSum = (totalSum + diff) / 2;
+    if ((totalSum + diff) % 2 != 0) {
+        return 0;
+    } else {
+        return countOfSubsetWithGivenSum(arr, biggerSubsetSum);
+    }
+    let n = arr.length;
+}   
+
+
+
+console.log(countOfSubsetWithGivenDiff([1, 2, 3, 3], 3))
+console.log(countOfSubsetWithGivenDiff([1, 2, 7, 2, 5], 3))
+console.log(countOfSubsetWithGivenDiff([1, 3, 4, 8], 5))
 
