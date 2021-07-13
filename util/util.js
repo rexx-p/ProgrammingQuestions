@@ -1,5 +1,5 @@
 function printMatrix(matrix) {
-    getString(matrix[0].length, matrix[0][0].length);
+    getString(matrix[0].length, (matrix[0][0] +''));
     for (let i = 0; i < matrix.length; i++) {
         const row = matrix[i];
         let rowToPrint = [];
@@ -12,7 +12,9 @@ function printMatrix(matrix) {
     console.log()
 }
 
-getString = function (rowLength, wordLength = 1) {
+getString = function (rowLength, word) {
+    let wordLength = word.length
+
     let str = [getStr(4, ' ')];
     for (let index = 0; index < rowLength; index++) {
         const element = rowLength[index];

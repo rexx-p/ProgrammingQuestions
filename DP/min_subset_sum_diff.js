@@ -17,6 +17,7 @@ let minimumSubsetDiff = function (arr) {
     for (let i = 0; i < n; i++) {
         dp[i][0] = 0;
     }
+    
     for (let currentSum = 1; currentSum <= sum; currentSum++) {
         if (currentSum >= arr[0]) {
             dp[0][currentSum] = arr[0];
